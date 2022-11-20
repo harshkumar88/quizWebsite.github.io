@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>History Quiz</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<script src="../common.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("input").click(function(){
+					
+					var elem =document.documentElement
+			
+			  if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			  } else if (elem.webkitRequestFullscreen) { /* Safari */
+				elem.webkitRequestFullscreen();
+			  } else if (elem.msRequestFullscreen) { /* IE11 */
+				elem.msRequestFullscreen();
+			  }
+			
+
+		});
+			})
+			
+			</script>
+		<script>
+			 
+			var minLeft = 5;
+			var secLeft = 00	;
+			var Timer = setInterval(function(){
+				 if(minLeft <= 0 && secLeft <0 ){
+					clearInterval(Timer);
+					document.getElementById("countdown").innerHTML = "Time Up";
+					window.alert("SORRY!! Your time is over");
+					localStorage.setItem('myValue','0');
+					
+					window.location= "../feedback page/feedback.html";
+				 }
+				 if(minLeft>00){
+					 if(secLeft<10 ){
+						 
+						 document.getElementById("countdown").innerHTML ="<h3>"+ "0" + minLeft+ " : 0" + secLeft+"</h3>" ;
+						 secLeft -= 1;
+					 } else {
+						 
+						 document.getElementById("countdown").innerHTML = "<h3>"+"0" + minLeft+ " : " + secLeft +"</h3>";
+						 secLeft -= 1;
+				 }
+				 if (minLeft>0 && secLeft<0){
+					 minLeft = minLeft - 1;
+					 secLeft=59;
+				 }}
+				 if(minLeft==00){
+				 
+					 if(secLeft<10){
+						document.getElementById("countdown").innerHTML = "<h3 style='color:red'>"+"0" + minLeft+ " : 0" + secLeft +"</h3>";
+						secLeft -= 1;
+					 }
+					 else{
+						document.getElementById("countdown").innerHTML = "<h3 style='color:red'>"+"0" + minLeft+ " : " + secLeft +"</h3>";
+						secLeft -= 1;
+					 }
+				 }
+			 }, 1000);
+ 
+		 </script>
+		<script>
+
+var cick="";
+$(document).ready(function(){
+	$(window).resize(function(){
+		
+		if($(window).innerWidth()<=700 && cick==1){
+			
+		$("#submitQuiz").hide();
+		$("#Next").show();
+		$("#Next").click(function(){
+			localStorage.setItem('again','current2')
+		})
+
+
+
+		}
+		else{
+			$("#submitQuiz").show();
+		$("#Next").hide();
+		}
+			
+		
+	})
+})
+
+			localStorage.setItem("page","history")
+			
+
+			var pick=localStorage.getItem("ans");
+			cick=pick;
+			
+			localStorage.removeItem("ans")
+			if(pick==3){
+				var first=localStorage.getItem("firstQ");
+				localStorage.removeItem("firstQ")
+				
+				first=first.split(",");
+			clearInterval(Timer)
+			$(document).ready(function(){
+				$("form div input").attr('disabled',true)
+				
+
+		$("#submitQuiz").hide();
+		$("#Next").show();
+		$("#Next").click(function(){
+			localStorage.setItem('again','history2')
+		})
+		if(first[4]!='Fourth Buddhist Council'){
+			var e4=first[4].split(" ");
+			e4=e4.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e4).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		if(first[3]!='Vajrapani'){
+			var e3=first[3].split(" ");
+			e3=e3.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e3).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		if(first[2]!='Senas'){
+			var e2=first[2].split(" ");
+			e2=e2.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e2).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		
+		if(first[1]!='Indo-Greeks'){
+			var e1=first[1].split(" ");
+			e1=e1.join("");
+			
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e1).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		if(first[5]!='Ashoka'){
+			var e5=first[5].split(" ");
+			e5=e5.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e5).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		
+		
+		
+
+				
+				
+				$("i").show();
+				
+			})
+
+			}
+			else{
+				$(document).ready(function(){
+				$("i").hide();
+				$("#Next").hide();
+			
+
+
+			})
+			}
+
+
+			
+			var count = 0;
+			var term=0;
+			var firstQues=',';
+			$(document).ready(function(){
+			$("#submitQuiz").on("click",function(){
+				
+				var ansClicked1 = quiz.firstQues.value;
+				var ansClicked2 = quiz.secQues.value;
+				var ansClicked3 = quiz.thirdQues.value;
+				var ansClicked4 = quiz.forthQues.value;
+				var ansClicked5 = quiz.fifthQues.value;
+				firstQues+=ansClicked1+",";
+				firstQues+=ansClicked2+",";
+				firstQues+=ansClicked3+",";
+				firstQues+=ansClicked4+",";
+				firstQues+=ansClicked5;
+				
+				
+				if(ansClicked1 == "Indo-Greeks"){
+					count++;
+				}
+				if(ansClicked1 == ""){
+					term++;
+				}
+				if(ansClicked2 == "Senas"){
+					count++;
+				}
+				if(ansClicked2 == ""){
+					term++;
+				}
+				if(ansClicked3 == "Vajrapani"){
+					count++;
+				}
+				if(ansClicked3 == ""){
+					term++;
+				}
+				if(ansClicked4 == "Fourth Buddhist Council"){
+					count++;
+				}
+				if(ansClicked4 == ""){
+					term++;
+				}
+				if(ansClicked5 == "Ashoka"){
+					count++;
+				}
+				if(ansClicked5 == ""){
+					term++;
+				}
+				localStorage.setItem("firstQ",firstQues);
+				login(event);
+					
+				
+				
+
+			});})
+
+
+			
+			function login(event){
+				event.preventDefault();
+				
+				
+				
+				if(term>=1){
+					document.getElementById('form').action='#'
+
+					alert("You have to attempt all questions");
+					term=0;
+					count=0;
+					
+
+				}
+				else{
+					alert("Your responses are saved")
+					document.getElementById('form').action="../feedback page/feedback.html"
+					localStorage.setItem('myValue',count);
+					window.location='../feedback page/feedback.html'
+					
+				}
+	
+	
+
+}		
+</script>
+		<link rel="stylesheet" type="text/css" href="quesCommon.css">
+		<link rel="stylesheet" type="text/css" href="../common.css">
+	</head>
+	<body>
+		<div class="container-fluid body-back-color">
+			<div class="sticky-top kk row d-flex">
+				<div class="col-2 col-md-3">
+					<DIV CLASS="logo position-relative">
+						<img class="w-100 h-100 position-absolute " src="../../Media/logoIMGs/logo2.png" />
+					</DIV>
+				</div>
+				<div class="col-9 col-md-5 d-flex justify-content-center">
+					<SPAN id="Main-Heading">QuickQuiz</SPAN>
+				</div>
+				<div class="col-12">
+					<div class="margin d-inline-block timer"><strong>Time left &nbsp : &nbsp </strong></div>
+					<div class="d-inline-block"  id="countdown"></div>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-1"></div>
+				<div style="background-color:#ffffffe3;" class="col-10 main-settings h-100">
+					<form name="quiz" action="../feedback page/feedback.html"  method="post" id='form'>
+						<br/>
+						<div class="question-template">
+							<span>1) </span><span> The governors called Strategos were introduced by __?</span>
+							<br>
+							<input type="radio" name="firstQues" value="Sakas"/>
+							<label for="Conductor">a) Sakas</label> <span  id="Sakas"></span>
+							<br>
+							<input type="radio" name="firstQues" value="Indo-Greeks"/>
+							<label for="Insulator">b) Indo-Greeks</label><i>✔️</i>
+							<br>
+							<input type="radio" name="firstQues" value="Kushanas"/>
+							<label for="Water">c) Kushanas</label> <span  id="Kushanas"></span>
+							<br>
+							<input type="radio" name="firstQues" value="Bactrians"/>
+							<label for="Ion">d) Bactrians</label> <span  id="Bactrians"></span>
+							<br>
+						</DIV>
+						<div class="question-template">
+						<span>2)</span>
+						<span> The rulers of which among the following dynasties called themselves “Brahma-Kshatriay”?</span>
+							<br>
+							<input type="radio" name="secQues" value="Palas"/>
+							<label for="Conductor">a) Palas</label> <span  id="Palas"></span>
+							<br>
+							<input type="radio" name="secQues" value="Senas"/>
+							<label for="Insulator">b) Senas</label><i>✔️</i>
+							<br>
+							<input type="radio" name="secQues" value="Pratiharas"/>
+							<label for="Water">c) Pratiharas</label> <span  id="Pratiharas"></span>
+							<br>
+							<input type="radio" name="secQues" value="Chahamanas"/>
+							<label for="Ion">d) Chahamanas</label> <span  id="Chahamanas"></span>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>3)</span><span> Which among the following Bodhisattva holds thunderbolt?</span>
+							<br>
+							<input type="radio" name="thirdQues" value="Vajrapani"/>
+							<label for="Conductor">a) Vajrapani</label><i>✔️</i>
+							<br>
+							<input type="radio" name="thirdQues" value="Manjushri"/>
+							<label for="Insulator">b) Manjushri</label> <span  id="Manjushri"></span>
+							<br>
+							<input type="radio" name="thirdQues" value="Maitreya"/>
+							<label for="Water">c) Maitreya</label> <span  id="Maitreya"></span>
+							<br>
+							<input type="radio" name="thirdQues" value="Amitabha"/>
+							<label for="Ion">d) Amitabha</label> <span  id="Amitabha"></span>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>4)</span><span>In which Buddhist council, Buddhism was divided into Sthaviravadins and Mahasanghikas?</span>
+							<br>
+							<input type="radio" name="forthQues" value="Second Buddhist Council"/>
+							<label for="Conductor">a) Second Buddhist Council</label> <span  id="SecondBuddhistCouncil"></span>
+							<br>
+							<input type="radio" name="forthQues" value="Third Buddhist Council"/>
+							<label for="Insulator">b) Third Buddhist Council</label> <span  id="ThirdBuddhistCouncil"></span>
+							<br>
+							<input type="radio" name="forthQues" value="First Buddhist Council"/>
+							<label for="Water">c) First Buddhist Council</label> <span  id="FirstBuddhistCouncil"></span>
+							<br>
+							<input type="radio" name="forthQues" value="Fourth Buddhist Council"/>
+							<label for="Ion">d) Fourth Buddhist Council</label><i>✔️</i>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>5)</span><span>During whose reign the Third Buddhist Council was organized?</span>
+							<br>
+							<input type="radio" name="fifthQues" value="Ashoka"/>
+							<label for="Conductor">a) Ashoka</label><i>✔️</i>
+							<br>
+							<input type="radio" name="fifthQues" value="Kalasoka"/>
+							<label for="Insulator">b) Kalasoka</label> <span  id="Kalasoka"></span>
+							<br>
+							<input type="radio" name="fifthQues" value="Ajatsatru"/>
+							<label for="Water">c) Ajatsatru</label> <span  id="Ajatsatru"></span>
+							<br>
+							<input type="radio" name="fifthQues" value="Kanishka"/>
+							<label for="Ion">d) Kanishka</label> <span  id="Kanishka"></span>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<hr>
+						<br/>
+						<div class="d-flex justify-content-center"><button class='btn btn-danger ' ID="submitQuiz">Submit</button><button class='btn btn-danger ' ID="Next" >Next</button></div>
+						<br/>
+					</form>
+				</DIV>
+				<div class="col-1"></div>	
+			</div>
+			
+		</div>
+
+	</body>
+</html>
+
+

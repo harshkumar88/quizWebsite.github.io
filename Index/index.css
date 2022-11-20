@@ -1,0 +1,206 @@
+
+#set li:hover{
+		background-color: #cacaca6b;
+		
+		/* font-variant: small-caps; */
+	}
+:root {
+	--box-shadow-value:0px 0px 10px 2px black;
+	 /*--background-image: YELLOW;
+	 
+	/* --background-image: linear-gradient(-90deg, #2E3192 , #1BFFFF); */
+	/* --background-image: linear-gradient(-90deg, #D4145A , #FBB03B); */
+	/*//--background-image: linear-gradient(-90deg, #662D8C , #ED1E79); */ /* best one till now */
+	/*--background-image: linear-gradient(140deg, #FF512F , #DD2476); */
+	 /*--background-image: linear-gradient(-90deg, #C33764 , #1D2671); */ /* suitable for the text */
+	/*--background-image: linear-gradient(90deg, #764BA2 , #667EEA); */
+	/* trying other combinations */
+	/*--background-image: linear-gradient(90deg, #8E0E00 , #1F1C18); */ /* it was also looking decent */
+	/* --background-image: linear-gradient(90deg, #fc00ff , #00dbde); */
+
+	/* now trying combination of 3 colors */
+	/*--background-image: linear-gradient(90deg,#833ab4, #fd1d1d, #fcb045); */
+	/* --background-image: linear-gradient(90deg,#21D4FD, #B721FF); */
+	--background-image:url("../Media/ThemeIMGs/bg.jpg");
+}
+#scroll{
+	display: none;
+}
+
+.logo{
+	height:60px;
+	/* min-height:30px; */
+	width:80px;
+	/* min-width:40px; */
+}
+hr{
+	color:white;
+}
+#Main-Heading{
+	font-family: "Kaushan Script", cursive;
+	/* font-size:50px; */
+	color:#bd2300;
+	margin:auto;
+	font-size : clamp(35px, 5vw, 50px);
+	transition: all 0.5s;
+}
+
+a{text-decoration:none;}
+#Main-Heading:hover{
+	background-color: #cacaca3b;
+	
+}
+
+.navbar-nav {
+	flex-direction: row !important;
+}
+.navbar-nav li a{
+	font-size : clamp(16px, 2vw, 25px) !important;
+}
+.menu-div{
+	position:absolute;
+	height:150vh;
+	width:43%;
+	z-index:1025;
+	background-color: #0f034cba;
+}
+.menu-bars{
+	font-size:30px;
+	margin-top:12px;
+	color:#16008e;
+	z-index:1040;
+}
+#rules{
+	/* margin-left:15%; */
+	MARGIN-TOP:5%;
+}
+#rules span{
+	font-size:2.5rem;
+	font-family:Bradley Hand ITC;
+	color: brown;
+	font-weight:bolder;
+}
+body{
+	margin:0px;
+	padding:0px;
+	height:50vh;
+	background-image:var(--background-image);
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+.main-settings{
+	min-height:110vh;
+	height:auto;
+	width:90vw;
+	margin:auto;
+	margin-top:12%;
+	margin-bottom:100px;
+
+}
+nav img{
+  width:5%;
+  height:3%;
+}
+#set{
+	position:sticky;
+	top:0px;
+}
+#set li a{
+	color:#05037b;
+
+}
+#set li{ 
+	transition: all 0.5s;
+}
+#set li:hover{
+  color: blue;
+}
+
+#color{
+	font-family:Cambria;
+	font-size:23px;
+	color:#001900;
+}
+nav div a:hover{
+   color: blue;
+  text-decoration: underline;
+  transition: all 2s;
+}
+.topic-images{
+	width:75%;
+	height:75%;
+}
+.card-basics{
+	margin:20px !important;
+	width: 250PX  ;
+	HEIGHT: 300PX ;
+	z-index:1;
+	box-shadow: 1px 4px 6px 1px black;
+	BORDER-RADIUS:6px;
+	transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+}
+.card-image{
+	width:90%;
+	height:150px;
+	BORDER-RADIUS:4px !important;
+	overflow:hidden;
+}
+.text-style{
+	text-align:center;
+	font-family:sans-serif;
+	/*COLOR:#004683;*/
+}
+#another{
+
+	background-image: url("https://th.bing.com/th/id/OIP.zDghH9b__KbS1Z28I4nn-AHaEK?pid=ImgDet&rs=1");
+	background-size: 100% 100%;
+	width:35%;
+	height: 45%;
+	border-radius: 50%;
+	margin: auto;
+	opacity: 0.6
+
+}
+.trans{
+	opacity:0.6;
+}
+.hover img:hover{transition: all 2s ease-in-out;
+	transform: scale3d(2,2,2)! important;
+
+}
+
+.span1,.span2,.span3,.span4{
+	border:1px solid black;
+	background-color: white;
+	margin-left: 15%;
+	margin-top: -3%
+}
+.card-basics:hover{
+	z-index: 2;
+	box-shadow: 4px 8px 12px 3px black;
+	height: 50vh;
+	width: 20vw;
+}
+@media  screen and (max-width: 786px){
+	.card-basics:hover{
+		z-index: 2;
+		box-shadow: 4px 8px 12px 3px black;
+		height: 60vh;
+		width: 40vw;
+	}
+	.logo{
+	height:50px;
+	width:70px;
+	}
+}
+
+.btn-brown{
+	color: #fff;
+    background-color: #980202;
+    border-color: #980202;
+}
+.btn-brown:hover{
+	color: #fff;
+	background-color: #750000;
+}

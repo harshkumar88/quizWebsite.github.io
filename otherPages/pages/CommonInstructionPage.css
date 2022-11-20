@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+.logo{
+	height:60px;
+	width:80px;
+}
+#rules{
+	margin-left:15%;
+}
+
+#choose{
+	margin-left:40%;
+	margin-top:70px;
+}
+nav img{
+  width:5%;
+  height:3%;
+}
+body{
+	margin:0px;
+	padding:0px;
+	height:50vh;
+	background-image:url("../../Media/ThemeIMGs/bg.jpg");
+	background-size:cover;
+	background-attachment: fixed;
+}
+#Main-Heading{
+	font-family: "Kaushan Script", cursive;
+	/* font-size:50px; */
+	color:#bd2300;
+	margin:auto;
+	font-size : clamp(35px, 5vw, 50px);
+	transition: all 0.5s;
+}
+
+a{text-decoration:none;}
+#Main-Heading:hover{
+	background-color: #cacaca3b;
+	
+}
+.topic-images{
+	width:75%;}
+.color{
+	color: black;
+	font-weight:bold
+}
+.main-settings{
+	min-height:110vh;
+	height:auto;
+	width:90vw;
+	margin:auto;
+	margin-top:7%;
+	margin-bottom:100px;
+	padding-top:17px
+}
+@media screen and (max-width:1130px){
+	.main-settings{
+		min-height:110vh;
+		height:auto;
+		width:90vw;
+		margin:auto;
+		margin-top:7%;
+		margin-bottom:100px;
+		padding-top:20px;
+		padding-bottom:10px;
+	}
+}
+@media screen and (max-width:900px){
+	.main-settings{
+		min-height:110vh;
+		height:auto;
+		width:90vw;
+		margin:auto;
+		margin-top:7%;
+		margin-bottom:100px;
+		padding-top:17px;
+		padding-bottom:10px;
+	}
+	.logo{
+	height:50px;
+	width:70px;
+	}
+} 
+.btn-brown{
+	color: #fff;
+    background-color: #980202;
+    border-color: #980202;
+}
+.btn-brown:hover{
+	color: #fff;
+	background-color: #750000;
+}
+.written-material{
+	font-family:Cambria;
+	font-size:20px;
+	color:#004a09;
+}

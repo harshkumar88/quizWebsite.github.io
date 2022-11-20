@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script> 
+	<title></title>
+	<script type="text/javascript" src="feedback.js">
+		
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="feedback.css">
+	<link rel="stylesheet" type="text/css" href="../common.css">
+</head>
+<body>
+	<div style="background-color:#ffffffe3;" class="col-12 main-settings">
+		<div id="first">
+			<h1 id="hope">We hope you enjoyed this Quiz!!</h1>
+			<button id="score" class="btn btn-primary btn-lg">Your Score</button><button  id ="score1"class="btn btn-primary btn-lg"><a href="#" id="anchor">Check Solution</a></button>
+			<div id="scroll">
+				<h2 id="correct">You give correct</h2>
+				<h2 style="margin-top:3%;" id="grade">So your grade is</h2>
+
+
+				
+			</div>
+			
+		</div>
+		<div id="second">
+			
+			<h2>Feedback Box-></h2>
+			<textarea rows='5' cols="80" placeholder="Please give your valuable feedback"></textarea>
+			<br>
+			<span class="fa fa-star str checked" id="a1"></span>
+			<span class="fa fa-star str checked" id="a2"></span>
+			<span class="fa fa-star str checked" id="a3"></span>
+			<span class="fa fa-star str checked" id="a4"></span>
+			<span class="fa fa-star str checked" id="a5"></span>
+			<span id='showresponse'></span>
+			<br>
+			<hr/>
+			<div class="d-flex justify-content-center"><button class='btn btn-brown' ID="submitQuiz"><a style="color:white;text-decoration:none" href='#' onclick="aler(event)" id='rate'>Next</a></button></div>
+			<br>			
+		</div>
+
+		<div id="last">
+
+			<div class="app">
+				<h1>Was this page helpful?</h1>
+				<p>Let us know how we did</p>
+			  
+				<div class="container">
+				  <div class="item">
+					<label for="0">
+					<input class="radio" type="radio" name="feedback" id="0" value="0">
+					<span>🤬</span>
+				  </label>
+				  </div>
+			  
+				  <div class="item">
+					<label for="1">
+					<input class="radio" type="radio" name="feedback" id="1" value="1">
+					<span>🙁</span>
+				  </label>
+				  </div>
+			  
+				  <div class="item">
+					<label for="2">
+					<input class="radio" type="radio" name="feedback" id="2" value="2">
+					<span>😶</span>
+				  </label>
+				  </div>
+			  
+				  <div class="item">
+					<label for="3">
+					<input class="radio" type="radio" name="feedback" id="3" value="3">
+					<span>😁</span>
+				  </label>
+				  </div>
+			  
+				  <div class="item">
+					<label for="4">
+					<input class="radio" type="radio" name="feedback" id="4" value="4">
+					<span>😍</span>
+				  </label>
+				  </div>
+			  
+				</div>
+			  </div>
+			  <div class="d-flex justify-content-center"><button class='btn btn-brown' ><a style="color:white;text-decoration:none" href='#' id="again">Submit</a></button></div>
+		</div>
+	
+	</div>
+
+</body>
+</html>

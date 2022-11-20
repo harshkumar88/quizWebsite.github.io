@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Science Quiz</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<script src="../common.js"></script>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script>
+			$(document).ready(function(){
+				$("input").click(function(){
+					
+					var elem =document.documentElement
+			
+			  if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			  } else if (elem.webkitRequestFullscreen) { /* Safari */
+				elem.webkitRequestFullscreen();
+			  } else if (elem.msRequestFullscreen) { /* IE11 */
+				elem.msRequestFullscreen();
+			  }
+			
+
+		});
+			})
+			
+			</script>
+		<script>
+			
+		
+		
+      
+	
+			
+			var minLeft = 5;
+			var secLeft = 00	;
+			
+			var Timer = setInterval(function(event){
+				
+				
+				 if(minLeft <= 0 && secLeft <0 ){
+					clearInterval(Timer);
+					document.getElementById("countdown").innerHTML = "Time Up";
+					window.alert("SORRY!! Your time is over");
+					localStorage.setItem('myValue','0');
+					
+					window.location= "../feedback page/feedback.html";
+				 }
+				 if(minLeft>00){
+					 if(secLeft<10 ){
+						 
+						 document.getElementById("countdown").innerHTML ="<h3>"+ "0" + minLeft+ " : 0" + secLeft+"</h3>" ;
+						 secLeft -= 1;
+					 } else {
+						 
+						 document.getElementById("countdown").innerHTML = "<h3>"+"0" + minLeft+ " : " + secLeft +"</h3>";
+						 secLeft -= 1;
+				 }
+				 if (minLeft>0 && secLeft<0){
+					 minLeft = minLeft - 1;
+					 secLeft=59;
+				 }}
+				 if(minLeft==00){
+					 
+				 
+					 if(secLeft<10){
+						document.getElementById("countdown").innerHTML = "<h3 style='color:red'>"+"0" + minLeft+ " : 0" + secLeft +"</h3>";
+						secLeft -= 1;
+					 }
+					 else{
+						document.getElementById("countdown").innerHTML = "<h3 style='color:red'>"+"0" + minLeft+ " : " + secLeft +"</h3>";
+						secLeft -= 1;
+					 }
+				 }
+			 }, 1000);
+ 
+		 </script>
+		<script>
+			var cick="";
+$(document).ready(function(){
+	$(window).resize(function(){
+		
+		if($(window).innerWidth()<=700 && cick==1){
+			
+		$("#submitQuiz").hide();
+		$("#Next").show();
+		$("#Next").click(function(){
+			localStorage.setItem('again','current2')
+		})
+
+
+
+		}
+		else{
+			$("#submitQuiz").show();
+		$("#Next").hide();
+		}
+			
+		
+	})
+})
+
+			
+
+			localStorage.setItem("page","science")
+			
+
+			var pick=localStorage.getItem("ans");
+			cick=pick;
+			
+			localStorage.removeItem("ans")
+			if(pick==1){
+				
+				var first=localStorage.getItem("firstQ");
+				localStorage.removeItem("firstQ")
+				
+				first=first.split(",");
+			
+			
+
+			clearInterval(Timer)
+			$(document).ready(function(){
+				$("form div input").attr('disabled',true)
+				
+
+		$("#submitQuiz").hide();
+		$("#Next").show();
+		$("#Next").click(function(){
+			localStorage.setItem('again','science2')
+		})
+		
+		if(first[3]!='interference of light'){
+			var e3=first[3].split(" ");
+			e3=e3.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e3).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		if(first[2]!='applied Mechanics'){
+			var e2=first[2].split(" ");
+			e2=e2.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e2).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		
+		if(first[1]!='To Know'){
+			var e1=first[1].split(" ");
+			e1=e1.join("");
+			
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e1).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+
+		if(first[4]!='0.36 m'){
+			var e4=first[4].split(" ");
+			e4=e4.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e4).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		if(first[5]!='500 W'){
+			var e5=first[5].split(" ");
+			e5=e5.join("");
+			
+			
+		
+			$(document).ready(function(){
+				$("#"+e5).html("❌");
+				
+
+
+
+			})
+		
+
+		}
+		
+		
+		
+		
+	
+
+				
+				
+				$("i").show();
+				
+			})
+
+			}
+			else if(pick!=1){
+				$(document).ready(function(){
+				$("i").hide();
+				$("#Next").hide();
+				
+				
+
+
+
+			})
+			}
+			
+
+			
+			
+			
+			
+			var count = 0;
+			var term=0;
+			var firstQues=',';	
+			$(document).ready(function(){
+			
+			$("#submitQuiz").on("click",function(){
+
+				
+				
+				var ansClicked1 = quiz.firstQues.value;
+				var ansClicked2 = quiz.secQues.value;
+				var ansClicked3 = quiz.thirdQues.value;
+				var ansClicked4 = quiz.forthQues.value;
+				var ansClicked5 = quiz.fifthQues.value;
+				firstQues+=ansClicked1+",";
+				firstQues+=ansClicked2+",";
+				firstQues+=ansClicked3+",";
+				firstQues+=ansClicked4+",";
+				firstQues+=ansClicked5;
+				
+				if(ansClicked1 == "To Know"){
+					count++;
+					
+					
+				}
+				if(ansClicked1 == ""){
+					term++;
+				}
+				if(ansClicked2 == "applied Mechanics"){
+					count++;
+					
+					
+				
+				}
+				if(ansClicked2 == ""){
+					term++;
+				}
+				if(ansClicked3 == "interference of light"){
+					count++;
+					
+					
+					
+				
+				}
+				if(ansClicked3 == ""){
+					term++;
+				}
+				if(ansClicked4 == "0.36 m"){
+					count++;
+					
+					
+					
+				}
+				if(ansClicked4 == ""){
+					term++;
+				}
+				if(ansClicked5 == "500 W"){
+					count++;
+				
+					
+				
+				}
+				if(ansClicked5 == ""){
+					term++;
+				}
+				localStorage.setItem("firstQ",firstQues);
+				login(event);
+					
+				
+				
+
+			});})
+
+
+			function login(event){
+				event.preventDefault();
+				
+				
+				
+				if(term>=1){
+					document.getElementById('form').action='#';
+
+					alert("You have to attempt all questions");
+					term=0;
+					count=0;
+					
+
+				}
+				else{
+					alert("Your responses are saved")
+					document.getElementById('form').action="../feedback page/feedback.html"
+					localStorage.setItem('myValue',count);
+					window.location='../feedback page/feedback.html'
+					
+				}
+	
+	
+
+
+}
+		</script>
+		<link rel="stylesheet" type="text/css" href="quesCommon.css">
+		<link rel="stylesheet" type="text/css" href="../common.css">
+	</head>
+	<body>
+		<div class="container-fluid body-back-color">
+			<div class="sticky-top kk row d-flex">
+				<div class="col-2 col-md-3">
+					<DIV CLASS="logo position-relative">
+						<img class="w-100 h-100 position-absolute " src="../../Media/logoIMGs/logo2.png" />
+					</DIV>
+				</div>
+				<div class="col-9 col-md-5 d-flex justify-content-center">
+					<SPAN id="Main-Heading"></SPAN>
+				</div>
+				<div class="col-12" style="background-color:#fffffff7;">
+					<div class="margin d-inline-block timer"><strong>Time left &nbsp : &nbsp </strong></div>
+					<div class="d-inline-block"  id="countdown"></div>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-1"></div>
+				<div style="background-color:#ffffffe3;" class="col-10 main-settings h-100">
+					<form name="quiz" action="../feedback page/feedback.html"  method="post" id='form'>
+						<br/>
+						<div class="question-template" id="d1">
+							<span>1) </span>
+							<span>The word Science originates from the Latin verb Scientia meaning ?</span>
+							<br>
+							<input type="radio" name="firstQues" value="To Know"/>
+							<label for="Conductor">a) To Know</label> <i>✔️</i>
+							<br>
+							<input type="radio" name="firstQues" value="To see"/>
+							<label for="Insulator">b) To see</label> <span  id="Tosee"></span>
+							<br>
+							<input type="radio" name="firstQues" value="To exprience"/>
+							<label for="Water">c) To exprience</label>  <span  id="Toexprience"></span>
+							<br>
+							<input type="radio" name="firstQues" value="to observe"/>
+							<label for="Ion">d) To observe</label> <span id="Toobserve"></span>
+							<br>
+						</DIV>
+						<div class="question-template">
+						<span>2)</span>
+						<span>Atomic and molecular phenomena are dealt with by : </span>
+							<br>
+							<input type="radio" name="secQues" value="Newtonian Mechanics"/>
+							<label for="Conductor">a) Newtonian Mechanics</label> <span id="NewtonianMechanics"></span>
+							<br>
+							<input type="radio" name="secQues" value="fluids Mechanics"/>
+							<label for="Insulator">b) fluids Mechanics</label> <span id="fluidsMechanics"></span>
+							<br>
+							<input type="radio" name="secQues" value="applied Mechanics"/>
+							<label for="Water">c) applied Mechanics</label><i>✔️</i>
+							<br>
+							<input type="radio" name="secQues" value="Quantum Mechanics"/>
+							<label for="Ion">d) Quantum Mechanics</label>  <span id="QuantumMechanics"></span>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>3)</span><span>Wave picture of light failed to explain :</span>
+							<br>
+							<input type="radio" name="thirdQues" value="the photoelectric effect"/>
+							<label for="Conductor">a) the photoelectric effect</label><span id="thephotoelectriceffect"></span>
+							<br>
+							<input type="radio" name="thirdQues" value="polarization of light"/>
+							<label for="Insulator">b) polarization of light</label> <span id="polarizationoflight"></span>
+							<br>
+							<input type="radio" name="thirdQues" value="diffraqction of lights"/>
+							<label for="Water">c) diffraqction of lights</label> <span id="diffraqctionoflights"></span>
+							<br>
+							<input type="radio" name="thirdQues" value="interference of light"/>
+							<label for="Ion">d) interference of light</label> <i>✔️</i>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>4)</span><span>A ball is dropped from a height of 1 m. If the coeffcient of restitution between the surface and ball is 0.6, the ball rebounds to a height of:</span>
+							<br>
+							<input type="radio" name="forthQues" value="0.6 m"/>
+							<label for="Conductor">a) 0.6 m</label> <span id="0.6m"></span>
+							<br>
+							<input type="radio" name="forthQues" value="0.4"/>
+							<label for="Insulator">b) 0.4</label> <span id="0.4m"></span>
+							<br>
+							<input type="radio" name="forthQues" value="1 m"/>
+							<label for="Water">c) 1 m</label> <span id="1m"></span>
+							<br>
+							<input type="radio" name="forthQues" value="0.36 m"/>
+							<label for="Ion">d) 0.36 m</label><i>✔️</i>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<div class="question-template">
+						<span>5)</span><span>A quantity of work of 1000 J is done in 2 seconds. The power utilised is ?</span>
+							<br>
+							<input type="radio" name="fifthQues" value="998 W"/>
+							<label for="Conductor">a) 998 W</label> <span id="998W"></span>
+							<br>
+							<input type="radio" name="fifthQues" value="1002 W"/>
+							<label for="Insulator">b) 1002 W</label> <span id="102W"></span>
+							<br>
+							<input type="radio" name="fifthQues" value="2000 W"/>
+							<label for="Water">c) 2000 W</label> <span id="2000W"></span>
+							<br>
+							<input type="radio" name="fifthQues" value="500 W"/>
+							<label for="Ion">d) 500 W</label> <i>✔️</i>
+							<br>
+							<!--free space for questions-->
+						</DIV>
+						<hr>
+						<br/>
+						<div class="d-flex justify-content-center"><button class='btn btn-danger ' ID="submitQuiz" >Submit</button><button class='btn btn-danger ' ID="Next" >Next</button></div>
+						<br/>
+					</form>
+				</DIV>
+				<div class="col-1"></div>	
+			</div>
+			
+		</div>
+
+	</body>
+</html>
+
+
